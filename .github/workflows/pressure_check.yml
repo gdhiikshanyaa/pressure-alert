@@ -1,0 +1,24 @@
+name: Pressure Check
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # runs every hour, on the hour (UTC)
+  workflow_dispatch:        # lets you trigger it manually from the Actions tab
+
+jobs:
+  check-pressure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run pressure check
+        run: python pressure_check.py
