@@ -15,7 +15,7 @@ from datetime import datetime, timezone, timedelta
 # --- Config ---
 LAT = 13.0827
 LON = 80.2707
-THRESHOLD = 2.0          # hPa drop in 3 h, after tide removal
+THRESHOLD = -5.0          # hPa drop in 3 h, after tide removal
 WINDOW_H = 3             # drop measured over 3 hours
 TIDE_DAYS = 15           # days of history used to estimate the daily tide
 LOOKBACK_H = 6           # hours checked on each run (covers GitHub schedule gaps)
